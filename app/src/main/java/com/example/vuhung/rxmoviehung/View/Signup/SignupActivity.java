@@ -3,6 +3,7 @@ package com.example.vuhung.rxmoviehung.View.Signup;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,7 @@ public class SignupActivity extends AppCompatActivity implements SignupView {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_signup);
         init();
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);// tắt xoay màn hình
 
         dialog = new ProgressDialog(this);
         dialog.setMessage("Loading...");

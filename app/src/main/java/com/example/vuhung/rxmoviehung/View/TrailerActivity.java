@@ -2,6 +2,7 @@ package com.example.vuhung.rxmoviehung.View;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
@@ -36,9 +37,9 @@ public class TrailerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_trailer);
         film = getIntent().getExtras().getParcelable("film");
         Log.d("film trailer 2",film.getTitle());
-        sharedPreferences = getSharedPreferences(SAVE_LIKE, Context.MODE_PRIVATE);
-
         init();
+        sharedPreferences = getSharedPreferences(SAVE_LIKE, Context.MODE_PRIVATE);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);// tắt xoay màn hình
         playFilmTrailer();
 
         tvLike.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +92,7 @@ public class TrailerActivity extends AppCompatActivity {
             public void onPageFinished(WebView view, String url) { webView.loadUrl("javascript:(function() { document.getElementsByTagName('video')[0].play(); })()"); }
         });
         webView.setWebChromeClient(new WebChromeClient());
-        webView.loadUrl("http://www.youtube.com/embed/" + getIdUrl(film.getLink())+ "?autoplay=1&vq=small"); //play video voi ID video
+        webView.loadUrl("http://www.youtube.com/embed/" + getIdUrl(film.getLink())+ "?autoplay=1&vq=small"); //play video youtube with ID
     }
 
     ////change color icon and text
@@ -218,9 +219,6 @@ public class TrailerActivity extends AppCompatActivity {
             tvLike.setTag(0);
         }
 
-
-
-
         String text = film.getDescription();
         if (text.length() > 150) {
             hideText = true;
@@ -231,7 +229,6 @@ public class TrailerActivity extends AppCompatActivity {
             tvViewMore.setVisibility(View.INVISIBLE);
             tvDescription.setText(film.getDescription());
         }
-
     }
 
 }

@@ -1,6 +1,7 @@
 package com.example.vuhung.rxmoviehung.View.ChangePassword;
 
 import android.app.ProgressDialog;
+import android.content.pm.ActivityInfo;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -38,6 +39,9 @@ public class ChangePasswordActivity extends AppCompatActivity implements ChangeP
         btnOk.setVisibility(View.INVISIBLE);
         dialog = new ProgressDialog(this);
         dialog.setMessage("Loading...");
+
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);// tắt xoay màn hình
+
 
         presenter = new ChangePasswordPresenter(this);
         btnSendLinkForMe.setOnClickListener(new View.OnClickListener() {

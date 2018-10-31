@@ -2,6 +2,7 @@ package com.example.vuhung.rxmoviehung.View.Signin;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -68,6 +69,8 @@ public class SigninActivity extends AppCompatActivity implements SigninView{
 
         init();
         signinActivity = this;
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);// tắt xoay màn hình
+
         if (isSignIn){
             startActivity(new Intent(SigninActivity.this,ListFilmActivity.class));
             finish();

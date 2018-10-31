@@ -59,7 +59,6 @@ public class SigninPresenter {
 
                     }else {
                         signinView.getMessageSuccess("Đăng nhập thành công!");
-
                     }
                 }
 
@@ -99,7 +98,7 @@ public class SigninPresenter {
                             signinView.getMessageError(response.body().getMessage());
                             signinView.hideLoading();
                         }else {
-                            signinView.getMessageSuccess(response.body().getMessage());
+                            signinView.getMessageSuccess("Đăng nhập thành công!");
                             signinView.hideLoading();
                         }
                     }

@@ -45,7 +45,6 @@ public class ChangePasswordPresenter {
                         }
                     }
                 }
-
                 @Override
                 public void onFailure(Throwable t) {
 
