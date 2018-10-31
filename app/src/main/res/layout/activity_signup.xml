@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg2x"
+    android:orientation="vertical"
+    tools:context="com.example.vuhung.rxmoviehung.View.Signup.SignupActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="11"
+        android:gravity="end"
+        android:orientation="vertical"
+        android:weightSum="15">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="13" />
+
+        <TextView
+            android:fontFamily="@font/open_sans_bold"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text="Đăng ký"
+            android:textSize="25sp"
+            android:textColor="@color/white"/>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:alpha="0.5"
+            android:layout_weight="0.1"
+            android:background="@color/white" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="9"
+        android:weightSum="5"
+        android:orientation="vertical">
+        <EditText
+            android:fontFamily="@font/open_sans"
+            android:id="@+id/edt_name_su"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:hint="Họ Tên"
+            android:textColorHint="@color/white"
+            android:alpha="0.7"
+            android:backgroundTint="@color/white"
+            android:textSize="14sp"
+            />
+        <EditText
+            android:fontFamily="@font/open_sans"
+            android:id="@+id/edt_email_su"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:hint="Email"
+            android:textColorHint="@color/white"
+            android:alpha="0.7"
+            android:backgroundTint="@color/white"
+            android:textSize="14sp"
+            />
+        <EditText
+            android:fontFamily="@font/open_sans"
+            android:id="@+id/edt_password_su"
+            android:password="true"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:hint="Mật khẩu"
+            android:textColorHint="@color/white"
+            android:alpha="0.7"
+            android:backgroundTint="@color/white"
+            android:textSize="14sp"
+            />
+        <EditText
+            android:fontFamily="@font/open_sans"
+            android:id="@+id/edt_confirm_password_su"
+            android:password="true"
+            android:textColor="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:hint="Xác nhận mật khẩu"
+            android:textColorHint="@color/white"
+            android:alpha="0.7"
+            android:backgroundTint="@color/white"
+            android:textSize="14sp"
+            />
+
+        <Button
+            android:fontFamily="@font/open_sans"
+            android:id="@+id/btn_signup"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="50dp"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/design_button1"
+            android:text="Đăng ký"
+            android:textColor="@color/white"
+            android:textAllCaps="false"/>
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="10"
+        android:orientation="vertical"
+        android:weightSum="30">
+
+        <ImageView
+            android:id="@+id/img_close_su"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_close"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:fontFamily="@font/open_sans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bằng việc chọn vào nút Đăng ký, bạn đã đồng ý với"
+            android:textColor="@color/white"
+            android:textSize="11dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_quy_dinh_bao_mat"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="48dp" />
+
+
+        <TextView
+            android:fontFamily="@font/open_sans"
+            android:id="@+id/tv_dieu_khoan_su_dung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/dieu_khoan_su_dung"
+            android:textColor="@color/orange"
+            android:textSize="11dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="48dp" />
+
+
+        <TextView
+            android:fontFamily="@font/open_sans"
+            android:id="@+id/tv_quy_dinh_bao_mat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="@string/quy_dinh_bao_mat"
+            android:textColor="@color/orange"
+            android:textSize="11dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="4dp" />
+
+
+        <TextView
+            android:fontFamily="@font/open_sans"
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="và"
+            android:textColor="@color/white"
+            android:textSize="11dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_dieu_khoan_su_dung"
+            tools:ignore="MissingConstraints"
+            android:layout_marginLeft="4dp" />
+
+        <TextView
+            android:fontFamily="@font/open_sans"
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:text="của Hfilm"
+            android:textColor="@color/white"
+            android:textSize="11dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/tv_quy_dinh_bao_mat"
+            tools:ignore="MissingConstraints"
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="4dp" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="0dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0.1"
+            android:alpha="0.5"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</LinearLayout>

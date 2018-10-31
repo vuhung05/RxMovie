@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">RxMovie</string>
+    <string name="dieu_khoan_su_dung"><u>Điều khoản sử dụng</u></string>
+    <string name="quy_dinh_bao_mat"><u>Quy định bảo mật</u></string>
+    <string name="dang_ky"><u>Đăng ký</u></string>
+    <string name="xem_them"><u><i>Xem thêm</i></u></string>
+    <string name="thu_gon"><u><i>Thu gọn</i></u></string>
+    <string name="actor"><b>Actor: </b></string>
+    <string name="genres"><b>Genres:</b></string>
+    <string name="director"><b>Director: </b></string>
+    <string name="manufacture"><b>Manufacture: </b></string>
+    <string name="thoi_luong_phim"><b>Thời lượng phim: </b></string>
+    <string name="facebook_app_id">301593507332026</string>
+    <string name="fb_login_protocol_scheme">fb301593507332026</string>
+    <string name="end_list">END LIST</string>
+</resources>
+

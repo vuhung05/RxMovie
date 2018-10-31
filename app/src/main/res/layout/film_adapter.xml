@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+
+            <ImageView
+                android:layout_marginTop="15dp"
+                android:id="@+id/img_film"
+                android:layout_width="match_parent"
+                android:layout_height="150dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_weight="1">
+
+            <TextView
+                android:fontFamily="@font/open_sans"
+                android:id="@+id/tv_en_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="15dp"
+                android:text="En name"
+                android:textColor="#FF4400"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:fontFamily="@font/open_sans"
+                android:textStyle="bold"
+                android:id="@+id/tv_vi_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_en_name"
+                android:text="Vi name"
+                android:textColor="@color/white"
+                android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:fontFamily="@font/open_sans"
+                android:id="@+id/tv_views"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/tv_vi_name"
+                android:text="lượt xem: 666.999"
+                android:textColor="@color/lightOrange"
+                android:textStyle="italic"
+                android:layout_alignParentLeft="true" />
+
+            <TextView
+                android:id="@+id/tv_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_views"
+                android:layout_alignParentStart="true"
+                android:fontFamily="@font/open_sans"
+                android:lines="5"
+                android:text="Không có mô tả"
+                android:textColor="@color/white"
+                android:layout_alignParentLeft="true" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="176dp"
+                android:gravity="top"
+                android:layout_alignParentLeft="true">
+
+                <ImageView
+                    android:id="@+id/img_like"
+                    android:layout_width="20dp"
+                    android:layout_height="17.5dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true" />
+
+                <TextView
+                    android:fontFamily="@font/open_sans"
+                    android:id="@+id/tv_like"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="30dp"
+                    android:text="Thích"
+                    android:textColor="@color/white"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="30dp" />
+
+                <Button
+                    android:fontFamily="@font/open_sans"
+                    android:id="@+id/btn_xem_phim"
+                    android:layout_width="112dp"
+                    android:layout_height="35dp"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/design_button1"
+                    android:text="Xem phim"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="15dp"
+        android:background="@color/white"
+        android:alpha="0.5"
+        android:id="@+id/view6"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
+
+</LinearLayout>
