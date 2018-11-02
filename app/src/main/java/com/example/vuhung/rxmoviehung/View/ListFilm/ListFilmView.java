@@ -8,7 +8,6 @@ import java.util.List;
 public interface ListFilmView {
     void showLoading();
     void hideLoading();
-    void showError();
     void displayListMovie( ArrayList<Film> listFilm);
     void endList();
 }

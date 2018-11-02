@@ -37,8 +37,9 @@ public class TrailerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_trailer);
         film = getIntent().getExtras().getParcelable("film");
         Log.d("film trailer 2",film.getTitle());
-        init();
         sharedPreferences = getSharedPreferences(SAVE_LIKE, Context.MODE_PRIVATE);
+        init();
+
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);// tắt xoay màn hình
         playFilmTrailer();
 
@@ -188,7 +189,6 @@ public class TrailerActivity extends AppCompatActivity {
 
         tvViews.setText(Html.fromHtml("<html><body>Lượt xem: </font> "+ film.getViews() +"</body><html>"));
 
-//        tvGenres.setText(getString(R.string.genres)+" " +film.getCategory());
 
         Picasso.with(this).load(film.getImage()).into(imgFilm);;
         tvGenres.setText(Html.fromHtml("<html><body><strong>"+getString(R.string.genres)+ " </strong>" + film.getCategory() +"</body><html>"));

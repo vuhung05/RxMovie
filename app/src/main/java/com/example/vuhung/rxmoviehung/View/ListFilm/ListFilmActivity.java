@@ -37,6 +37,7 @@ public class ListFilmActivity extends AppCompatActivity implements ListFilmView{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_film);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);// tắt xoay màn hình
+        //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
         if (isNetworkConnected()) {
             lvFilm = (ListView) findViewById(R.id.lv_film);
             LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -81,10 +82,6 @@ public class ListFilmActivity extends AppCompatActivity implements ListFilmView{
     @Override
     public void hideLoading() {
         lvFilm.removeFooterView(footerView);
-    }
-    @Override
-    public void showError() {
-
     }
 
     @Override
