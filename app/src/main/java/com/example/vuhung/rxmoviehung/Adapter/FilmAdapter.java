@@ -123,8 +123,8 @@ public class FilmAdapter extends ArrayAdapter{
 
 
             String text = film.getDescription();
-            if (text.length() > 170) {
-                text = text.substring(0, 170) + "...";
+            if (text.length() > 135) {
+                text = text.substring(0, 135) + "...";
                 viewHolder.tvDescription.setText(Html.fromHtml(text));
             }else {
                 viewHolder.tvDescription.setText(film.getDescription());

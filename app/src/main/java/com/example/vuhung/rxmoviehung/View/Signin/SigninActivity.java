@@ -29,6 +29,7 @@ import com.facebook.FacebookSdk;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
+import com.facebook.appevents.AppEventsLogger;
 
 import java.util.Arrays;
 

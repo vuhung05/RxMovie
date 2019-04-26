@@ -2,9 +2,13 @@ package com.example.vuhung.rxmoviehung.View.ListFilm;
 
 import android.content.Context;
 import android.content.pm.ActivityInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Base64;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -18,6 +22,8 @@ import com.example.vuhung.rxmoviehung.Model.Film;
 import com.example.vuhung.rxmoviehung.Presenter.ListFilmPresenter;
 import com.example.vuhung.rxmoviehung.R;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 
 public class ListFilmActivity extends AppCompatActivity implements ListFilmView{
@@ -38,6 +44,8 @@ public class ListFilmActivity extends AppCompatActivity implements ListFilmView{
         setContentView(R.layout.activity_list_film);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_NOSENSOR);// tắt xoay màn hình
         //setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_SENSOR);
+
+        getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         if (isNetworkConnected()) {
             lvFilm = (ListView) findViewById(R.id.lv_film);
             LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
@@ -65,6 +73,24 @@ public class ListFilmActivity extends AppCompatActivity implements ListFilmView{
         }else {
             Toast.makeText(this,"Vui long kiem tra ket noi internet va thu lai",Toast.LENGTH_LONG).show();
         }
+
+
+/////key hash
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo(
+                    "com.example.vuhung.rxmovie",
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.d("keyhash:", Base64.encodeToString(md.digest(), Base64.DEFAULT));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+
+        } catch (NoSuchAlgorithmException e) {
+
+        }
+
     }
 
     //check internet connection
@@ -73,7 +99,19 @@ public class ListFilmActivity extends AppCompatActivity implements ListFilmView{
 
         return cm.getActiveNetworkInfo() != null;
     }
-
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
     @Override
     public void showLoading() {
         lvFilm.addFooterView(footerView);
